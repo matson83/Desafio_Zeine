@@ -33,22 +33,22 @@ export class ContactsController {
   }
 
   @Delete(':id')
-async delete(@Req() req: any, @Param('id') id: string) {
-  const ownerId = req.user.sub;
-  return this.service.delete(ownerId, id);
-}
+  async delete(@Req() req: any, @Param('id') id: string) {
+    const ownerId = req.user.sub;
+    return this.service.delete(ownerId, id);
+  }
 
-@Patch(':id')
-async update(@Req() req: any, @Param('id') id: string, @Body() body: any) {
-  const ownerId = req.user.sub;
-  return this.service.update(ownerId, id, body);
-}
+  @Patch(':id')
+  async update(@Req() req: any, @Param('id') id: string, @Body() body: any) {
+    const ownerId = req.user.sub;
+    return this.service.update(ownerId, id, body);
+  }
 
-@Get(':id')
-async getOne(@Req() req: any, @Param('id') id: string) {
-  const ownerId = req.user.sub;
-  return this.service.getOne(ownerId, id);
-}
+  @Get(':id')
+  async getOne(@Req() req: any, @Param('id') id: string) {
+    const ownerId = req.user.sub;
+    return this.service.getOne(ownerId, id);
+  }
 
 
 }
